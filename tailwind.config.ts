@@ -1,0 +1,80 @@
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+    content: [
+        './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    ],
+    theme: {
+        colors: {
+            white: '#fff',
+            black: '#000',
+            mainRed: '#EF0325',
+            borderGray: '#E2E2E2',
+            beige: '#FFF9E3',
+            darkBeige: '#F6F0D8',
+            transparent: 'transparent',
+            pampas: '#F7F0EA',
+            paleGreen: '#EAF7EA',
+            pastelBlue: '#EDF3FF',
+            pastelPurple: '#FCF1FF',
+            pastelOrange: '#FFF7F1',
+            babyBlue: '#E9F4FF',
+            darkpurple: '#9806BB',
+            lightpurple: '#F4C7FF',
+            skyPastelBlue: '#EFF5FF',
+            paleGray: '#F3F3F3',
+            lavander: '#F2E8FF',
+            paleYellow: '#FFFBEA',
+            lightGreen: '#F1FFEB',
+            lightPastelGreen: '#F1FCE4',
+            lightPastelBlue: '#F0FEFF',
+            backdrop: '#000000cc',
+            gray: '#E6E6E6',
+            lightgray: '#F8F8F8',
+            lightgray2: '#F1F1F1',
+            gray2: '#9F9F9F',
+            paypalYellow: "#FFC439",
+            darkgray: '#333333',
+            green: '#39D935',
+            darkgray2: '#6B6B6B',
+            red: "#FF0000",
+            warningRed: "#ffb8b7bf",
+        },
+        extend: {
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'gradient-conic':
+                    'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                'gradient-linear': 'linear-gradient(var(--tw-gradient-stops))',
+            },
+            boxShadow: {
+                shadow15px: '0px 0px 15px 0px rgba(188, 188, 188, 0.20)',
+            },
+        },
+        screens: {
+            xs: { min: '0px', max: '768px' },
+            sm: { min: '768px', max: '834px' },
+            md: { min: '834px', max: '1024px' },
+            lg: { min: '1024px' },
+        },
+    },
+    safelist: [
+        ...[...Array(101)].flatMap((a, i) => [`w-[${i}%]`]), // all width percentage classes
+        ...[...Array(100)].flatMap((a, i) => [`h-[${i * 40}px]`]),
+        'mt-[40px]',
+        'mt-[12px]',
+        'bg-pastelPurple',
+        'bg-pastelOrange',
+        'bg-beige',
+        'bg-babyBlue',
+        'bg-skyPastelBlue',
+        'bg-paleYellow',
+        'bg-lightGreen',
+        'bg-lightPastelGreen',
+        'bg-lightPastelBlue',
+    ],
+    plugins: [],
+};
+export default config;

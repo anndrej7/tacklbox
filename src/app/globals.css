@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 255, 255, 255;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+}
+
+/* Added this to remove scrolling when Modal is open */
+.ReactModal__Body--open {
+  overflow: hidden !important;
+}
+
+.swiper {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+
+  @media screen and (max-width: 1023px) {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+/* Hide filter and peptides sidebar toggle button when search is open */
+.popover-open #filters,
+.popover-open #peptides-list {
+  display: none;
+}
+
+@layer components {
+  /* Containers */
+  .container {
+    @apply w-full max-w-[1864px] px-[32px] sm:px-[16px] xs:px-[16px] mx-auto;
+  }
+
+  .container-max-1500 {
+    @apply w-full max-w-[1500px] mx-auto;
+  }
+
+  /* Link hover */
+  .link-hover {
+    @apply hover:text-mainRed transition ease-linear duration-300 w-fit;
+  }
+
+  /* Active nav link */
+  .active-link {
+    @apply font-bold text-mainRed transition duration-300;
+  }
+
+  /* //////// */
+  /* Main page heading */
+  .font-H1 {
+    @apply text-[48px] font-bold leading-[58px] sm:text-[32px] sm:leading-[39px];
+  }
+
+  /* 32px on all devices */
+  .font-32px-ALL {
+    @apply text-[32px] leading-[40px] text-black;
+  }
+
+  /* 26px on all devices */
+  .font-26px-ALL {
+    @apply text-[26px] leading-[32px] text-black;
+  }
+
+  /* 20px on all devices */
+  .font-20px-ALL {
+    @apply text-[20px] leading-[28px] text-black;
+  }
+
+  /* 19px on all devices */
+  .font-19px-ALL {
+    @apply text-[19px] leading-[28px] text-black;
+  }
+
+  /* 18px on all devices */
+  .font-18px-ALL {
+    @apply text-[18px] leading-[22px] text-black;
+  }
+
+  /* 16px on all devices */
+  .font-16px-ALL {
+    @apply text-[16px] leading-[24px] text-black;
+  }
+
+  /* 15px on all devices */
+  .font-15px-ALL {
+    @apply text-[15px] leading-[23px] text-black;
+  }
+
+  /* 14px on all devices */
+  .font-14px-ALL {
+    @apply text-[14px] leading-[22px] text-black;
+  }
+
+  /* 13px on all devices */
+  .font-13px-ALL {
+    @apply text-[13px] leading-[21px] text-black;
+  }
+
+  /* 26px on all devices */
+  .font-26px-ALL {
+    @apply text-[26px] leading-[33px] text-black;
+  }
+
+  /* 72px on all devices */
+  .font-72px-ALL {
+    @apply text-[72px] leading-[80px] text-black;
+  }
+
+  /* Desktop 32px Mobile 24px */
+  .font-D32px-M24px {
+    @apply text-[32px] leading-[39px] text-black sm:text-[24px] sm:leading-[29px];
+  }
+
+  /* Desktop 32px Mobile 18px */
+  .font-D32px-M18px {
+    @apply text-[32px] leading-[39px] text-black sm:text-[18px] sm:leading-[22px];
+  }
+
+  /* Desktop 20px Mobile 18px */
+  .font-D20px-M18px {
+    @apply text-[20px] leading-[28px] text-black sm:text-[18px] sm:leading-[26px] md:text-[18px] md:leading-[26px];
+  }
+
+  /* Desktop 24px Mobile 18px */
+  .font-D24px-M18px {
+    @apply text-[24px] leading-[29px] text-black sm:text-[18px] sm:leading-[26px];
+  }
+
+  /* Desktop 24px Mobile 14px */
+  .font-D24px-M14px {
+    @apply text-[24px] leading-[29px] text-black sm:text-[14px] sm:leading-[22px];
+  }
+
+  /* Desktop 20px Mobile 16px */
+  .font-D20px-M16px {
+    @apply text-[20px] leading-[28px] text-black sm:text-[16px] sm:leading-[24px];
+  }
+
+  /* Desktop 18px Mobile 16px */
+  .font-D18px-M16px {
+    @apply text-[18px] leading-[26px] text-black sm:text-[16px] sm:leading-[24px];
+  }
+
+  /* Desktop 16px Mobile 14px */
+  .font-D16px-M14px {
+    @apply text-[16px] leading-[24px] text-black sm:text-[14px] sm:leading-[22px];
+  }
+
+  /* Desktop 16px Mobile 14px */
+  .font-D16px-M13px {
+    @apply text-[16px] leading-[24px] text-black sm:text-[13px] sm:leading-[16px];
+  }
+
+  /* Desktop 48px Tablet 38px Mobile 26px */
+  .font-D48px-T38px-M26px {
+    @apply text-[48px] leading-[56px] text-black md:text-[38px] md:leading-[46px] sm:text-[26px] sm:leading-[33px] xs:text-[26px] xs:leading-[33px];
+  }
+
+  /* Link button styles */
+  .link-btn {
+    @apply font-16px-ALL max-h-[52px] rounded-[15px] px-[68px] py-[14px] text-center uppercase  transition-all duration-300;
+  }
+
+  /* With full blue bg */
+  .link-btn--full {
+    @apply bg-mainRed text-white hover:bg-darkpurple;
+  }
+
+  /* With transparent bg */
+  .link-btn--transparent {
+    @apply border border-mainRed bg-transparent text-mainRed hover:bg-darkpurple hover:text-white;
+  }
+
+  /* ///////////////////////////////////////////////////////////////////////////////////// */
+  /* ///////////////////////////////////////////////////////////////////////////////////// */
+  /* Cart css styles */
+
+  .cart-step-num {
+    @apply text-[56px] font-bold uppercase leading-[66px] text-darkgray2;
+  }
+
+  .cart-step-num--active {
+    @apply text-black;
+  }
+
+  .cart-step-title {
+    @apply text-[19px] font-normal uppercase leading-[27px] text-darkgray2 sm:text-[18px];
+  }
+
+  .cart-step-title--active {
+    @apply text-black;
+  }
+
+  .cart-step-desc {
+    @apply text-[13px] font-normal leading-[21px] text-darkgray2;
+  }
+
+  .cart-step-desc--active {
+    @apply text-black;
+  }
+
+  /* Labels section on cart */
+  .label {
+    @apply text-[16px] font-normal uppercase leading-[24px] text-black sm:text-[16px];
+  }
+
+  .product-btn {
+    @apply relative bg-none w-[50%] pb-[4px] text-[16px] font-normal leading-[24px] text-gray2 sm:w-full sm:px-[35px] md:w-[50%] md:px-0 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-lightgray2 after:content-[''] first:after:rounded-l-[15px] last:after:rounded-r-[15px];
+  }
+
+  .product-btn--active {
+    @apply z-[2] font-bold text-mainRed after:bg-mainRed;
+  }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #f8f8f8;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #e6e6e6;
+    border-radius: 100vh;
+    border: 3px solid #e6e6e6;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+    border: 3px solid #999999;
+  }
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.nasa-sc.products {
+  display: none !important;
+}
+
+#home-slider .swiper-horizontal > .swiper-pagination-bullets {
+  bottom: -5px;
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.swiper-pagination > .swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  margin: 0px 8px !important;
+  background-color: #b614dd;
+  opacity: 0.3;
+}
+
+.swiper-pagination > .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #f8f8f8;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #e6e6e6;
+    border-radius: 100vh;
+    border: 3px solid #e6e6e6;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+    border: 3px solid #999999;
+  }
+}
