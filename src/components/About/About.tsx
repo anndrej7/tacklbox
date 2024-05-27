@@ -2,7 +2,7 @@
 
 const AboutComponent = () => {
   return (
-    <div className="bg-black text-white container rounded-[5px] pt-[32px] pb-[32px]">
+    <div className="bg-white text-black container rounded-[5px] pt-[32px] pb-[32px]">
       <h1 className="text-4xl font-bold mb-4">About Us</h1>
       <p className="text-lg mb-4">
         Welcome to TACKL<span className="text-red">BOX</span>! We are dedicated to providing the best services to

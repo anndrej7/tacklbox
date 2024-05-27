@@ -52,9 +52,9 @@ export const LoginComponent: FC<loginProps> = ({}) => {
 
   return (
     <>
-      <div className="bg-black m-auto max-w-[600px] rounded-[10px] pb-[24px]">
+      <div className="bg-white m-auto max-w-[600px] rounded-[10px] pb-[24px]">
         <div className="flex justify-center">
-          <div className="font-26px-ALL pt-[24px] pb-[21px] sm:font-medium !text-white">
+          <div className="font-26px-ALL pt-[24px] pb-[21px] sm:font-medium">
             Great to have you back!
           </div>
         </div>
@@ -84,7 +84,7 @@ export const LoginComponent: FC<loginProps> = ({}) => {
             disabled={!loginData.password || !loginData.username}
             reverseColors
           />
-          <div className="font-26px-ALL text-center !text-white">or</div>
+          <div className="font-26px-ALL text-center">or</div>
           <div className="flex justify-center">
             <div className="flex gap-4">
               <div
@@ -97,7 +97,7 @@ export const LoginComponent: FC<loginProps> = ({}) => {
                   width={32}
                   height={32}
                 />
-                <div className="ml-2 !text-white">Sign in with Google</div>
+                <div className="ml-2">Sign in with Google</div>
               </div>
               <div
                 className="flex items-center justify-center font-16px-ALL"
@@ -109,11 +109,11 @@ export const LoginComponent: FC<loginProps> = ({}) => {
                   width={32}
                   height={32}
                 />
-                <div className="ml-2 !text-white">Sign in with Facebook</div>
+                <div className="ml-2">Sign in with Facebook</div>
               </div>
             </div>
           </div>
-          <div className="font-D16px-ALL flex w-[100%] justify-center pt-[16px] !text-white">
+          <div className="font-D16px-ALL flex w-[100%] justify-center pt-[16px]">
             <div>
               Not a member?{" "}
               <span
